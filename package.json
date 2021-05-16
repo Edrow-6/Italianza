@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.15",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
+  },
+  "name": "italianza",
+  "description": "Pizza website",
+  "version": "1.0.0",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "postcss public/assets/css/styles.css -o public/assets/css/compiled.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edrow-6/Pidza.git"
+  },
+  "author": "Edrow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Edrow-6/Pidza/issues"
+  },
+  "homepage": "https://github.com/Edrow-6/Pidza#readme"
+}

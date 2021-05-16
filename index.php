@@ -3,12 +3,13 @@ require_once 'backend/functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pidza - Pizzas italiennes authentiques au feu de bois</title>
+    <title>Italianza - Pizzas italiennes authentiques au feu de bois</title>
 
     <link rel="shortcut icon" href="assets/images/pizza_logo.png" type="image/x-icon">
     <!-- Tailwind CSS -->
@@ -25,8 +26,8 @@ require_once 'backend/functions.php';
             <div class="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10">
                 <div class="flex justify-start lg:w-0 lg:flex-1">
                     <a href="#">
-                        <span class="sr-only">Pidza</span>
-                        <img class="w-auto h-8 sm:h-10" src="assets/images/pizza_logo.png" alt="Pidza Logo">
+                        <span class="sr-only">Italianza</span>
+                        <img class="w-auto h-8 sm:h-10" src="assets/images/pizza_logo.png" alt="Italianza Logo">
                     </a>
                 </div>
                 <div class="-my-2 -mr-2 md:hidden">
@@ -43,11 +44,6 @@ require_once 'backend/functions.php';
                         <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                         <button @click="open = true" type="button" class="inline-flex items-center text-base font-medium text-gray-500 bg-gray-100 rounded-md group hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500" aria-expanded="false">
                             <span>LA CARTE</span>
-                            <!--
-              Heroicon name: solid/chevron-down
-
-              Item active: "text-gray-600", Item inactive: "text-gray-400"
-            -->
                             <svg class="w-5 h-5 ml-2 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
@@ -143,7 +139,7 @@ require_once 'backend/functions.php';
                     </div>
 
                     <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-                        PIDZA FIDÉLITÉ
+                        Italianza FIDÉLITÉ
                     </a>
                     <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
                         NOS ENGAGEMENTS
@@ -166,7 +162,7 @@ require_once 'backend/functions.php';
         <div class="w-full bg-center bg-cover" style="height:32rem; background-image: url(https://c0.wallpaperflare.com/preview/378/110/547/pizza-oven-fire-red.jpg);">
             <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
                 <div class="text-center">
-                    <h1 class="text-5xl font-extrabold text-white uppercase">PIDZA</h1>
+                    <h1 class="text-5xl font-extrabold text-white uppercase">Italianza</h1>
                     <span class="text-3xl font-bold text-yellow-400">Pizzas italiennes authentiques cuites au feu de bois</span>
                 </div>
             </div>
@@ -194,28 +190,23 @@ require_once 'backend/functions.php';
                         <span class="ml-3">CLICK & COLLECT</span>
                     </a>
                 </div>
-                <!--<?php 
-$Pizza = getAllPizza();
-?>
-<form action="" method="POST">
-<?php
-if(isset($_POST['pizza']))
-{
-  $id = $_POST['pizza'];
-  $Ingredient = getPizzaIngredientByID($id);
-  foreach ($Ingredient as $key=>$valeur){               
-    echo $valeur."</BR>";
-   }
-}
-foreach ($Pizza as $key=>$valeur){              
- echo "<button type=submit name=pizza value='$valeur[id]'>$valeur[libelle]</button></BR>";
-}
-
-
-
-
-?>
-</form>-->
+                <?php
+                $Pizza = getAllPizza();
+                ?>
+                <form action="" method="POST">
+                    <?php
+                    if (isset($_POST['pizza'])) {
+                        $id = $_POST['pizza'];
+                        $Ingredient = getPizzaIngredientByID($id);
+                        foreach ($Ingredient as $key => $valeur) {
+                            echo $valeur . "</BR>";
+                        }
+                    }
+                    foreach ($Pizza as $key => $valeur) {
+                        echo "<button type=submit name=pizza value='$valeur[id]'>$valeur[libelle]</button></BR>";
+                    }
+                    ?>
+                </form>
             </div>
         </div>
     </div>
@@ -223,7 +214,7 @@ foreach ($Pizza as $key=>$valeur){
     <div class="flex items-center justify-center w-full bg-gray-200">
         <div class="flex flex-col w-full px-4text-white md:w-2/3">
             <div class="flex flex-col">
-                <p class="w-full mt-12 text-center text-gray-600">Copyright © 2021 Pidza Corp.</p>
+                <p class="w-full mt-12 text-center text-gray-600">Copyright © 2021 Italianza Corp.</p>
                 <p class="w-full mb-12 text-center text-gray-600">Pour votre santé, mangez au moins cinq fruits et légumes par jour <a href="http://www.mangerbouger.fr">WWW.MANGERBOUGER.FR</a></p>
             </div>
         </div>
