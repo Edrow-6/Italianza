@@ -114,10 +114,10 @@
                 </a>
             </nav>
             <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
-                <a href="#" class="text-base font-medium text-gray-500 whitespace-nowrap hover:text-gray-900">
+                <a href="../auth/connexion.php" class="text-base font-medium text-gray-500 whitespace-nowrap hover:text-gray-900">
                     Connexion
                 </a>
-                <a href="#" class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white transition duration-200 ease-in-out transform bg-yellow-500 border border-transparent rounded-md shadow-sm hover:scale-105 whitespace-nowrap hover:bg-yellow-600">
+                <a href="../auth/inscription.php" class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white transition duration-200 ease-in-out transform bg-yellow-500 border border-transparent rounded-md shadow-sm hover:scale-105 whitespace-nowrap hover:bg-yellow-600">
                     S'inscrire
                 </a>
             </div>
