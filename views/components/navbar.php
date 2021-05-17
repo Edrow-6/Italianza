@@ -2,7 +2,7 @@
     <div class="px-4 mx-auto max-w-7xl sm:px-6">
         <div class="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10">
             <div class="flex justify-start lg:w-0 lg:flex-1">
-                <a href="#">
+                <a href="/">
                     <span class="sr-only">Italianza</span>
                     <img class="w-auto h-8 sm:h-10" src="assets/images/pizza_logo.png" alt="Italianza Logo">
                 </a>
@@ -101,23 +101,32 @@
                                         <span class="ml-3">Bouton 2</span>
                                     </a>
                                 </div>
+                                <div class="flow-root">
+                                    <a href="#" class="flex items-center p-3 -m-3 text-base font-medium text-gray-900 rounded-md hover:bg-gray-100">
+                                        <!-- Heroicon name: outline/phone -->
+                                        <svg class="flex-shrink-0 w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                        <span class="ml-3">Bouton 3</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="#" class="text-base font-medium text-gray-500 uppercase hover:text-gray-900">
+                <a href="/italianza-fidelite" class="text-base font-medium text-gray-500 uppercase hover:text-gray-900">
                     Italianza Fidélité
                 </a>
-                <a href="#" class="text-base font-medium text-gray-500 uppercase hover:text-gray-900">
+                <a href="/nos-engagements" class="text-base font-medium text-gray-500 uppercase hover:text-gray-900">
                     Nos engagements
                 </a>
             </nav>
             <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
-                <a href="../auth/connexion.php" class="text-base font-medium text-gray-500 whitespace-nowrap hover:text-gray-900">
+                <a href="/connexion" class="text-base font-medium text-gray-500 whitespace-nowrap hover:text-gray-900">
                     Connexion
                 </a>
-                <a href="../auth/inscription.php" class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white transition duration-200 ease-in-out transform bg-yellow-500 border border-transparent rounded-md shadow-sm hover:scale-105 whitespace-nowrap hover:bg-yellow-600">
+                <a href="/inscription" class="inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white transition duration-200 ease-in-out transform bg-yellow-500 border border-transparent rounded-md shadow-sm hover:scale-105 whitespace-nowrap hover:bg-yellow-600">
                     S'inscrire
                 </a>
             </div>

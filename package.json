@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Edrow-6/Pidza/issues"
   },
-  "homepage": "https://github.com/Edrow-6/Pidza#readme"
+  "homepage": "https://github.com/Edrow-6/Pidza#readme",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.2"
+  }
 }

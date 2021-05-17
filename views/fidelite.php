@@ -1,6 +1,6 @@
 <?php
 // Inclusion du backend pour les fonctions
-require_once dirname(__DIR__) . '/../backend/functions.php';
+require_once dirname(__DIR__) . '/backend/functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,14 +8,14 @@ require_once dirname(__DIR__) . '/../backend/functions.php';
 <head>
     <?php
     // Ajout du contenu du head
-    include dirname(__FILE__) . '/../components/head.php';
+    include dirname(__FILE__) . '/components/head.php';
     ?>
 </head>
 
 <body>
     <?php
     // Ajout de la barre de navigation
-    include dirname(__FILE__) . '/../components/navbar.php';
+    include dirname(__FILE__) . '/components/navbar.php';
     ?>
 
     <div class="flex items-center justify-center min-h-screen px-4 bg-gray-50 sm:px-6 lg:px-8">
@@ -65,7 +65,7 @@ require_once dirname(__DIR__) . '/../backend/functions.php';
     </div>
     <?php
     // Ajout du bas de page
-    include dirname(__FILE__) . '/../components/footer.php';
+    include dirname(__FILE__) . '/components/footer.php';
     ?>
 </body>
 
