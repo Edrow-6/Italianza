@@ -9,7 +9,8 @@
 
 <body class="bg-gray-50">
     <!-- BARRE DE NAVIGATION -->
-    <?php include dirname(__FILE__) . '/components/navbar.php'; ?>
+    <?php include dirname(__FILE__) . '/components/navbar.php'; 
+    var_dump($_SESSION['panier']);?>
 
 <div class="container mx-auto my-5">
     <div class="grid grid-cols-3 gap-4 mx-10 gap-x-12 justify-items-center ">
@@ -49,7 +50,7 @@
                     </div>
                 </div>
                 <div class="p-4 text-xs text-gray-700 border-t border-b">
-                    <button type="submit" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white transition duration-200 ease-in-out transform bg-yellow-500 border border-transparent rounded-md group hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
+                    <button type="submit" name="ajouter" value="'.$id.'" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white transition duration-200 ease-in-out transform bg-yellow-500 border border-transparent rounded-md group hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
                         <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <i class="text-2xl text-yellow-400 far fa-cart-plus"></i>
                         </span>
@@ -63,7 +64,10 @@
     </div>
 </div>
     <!-- BAS DE PAGE -->
-    <?php include dirname(__FILE__) . '/components/footer.php'; ?>
+    <?php include dirname(__FILE__) . '/components/footer.php'; 
+   
+    ?>
+    
 </body>
 
 </html>

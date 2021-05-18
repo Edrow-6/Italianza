@@ -20,59 +20,59 @@
                     <div x-show="open" @click.away="open = false" class="absolute z-10 w-screen max-w-md px-2 mt-3 -ml-4 transform sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                         <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                             <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
-                                <a href="/pizzas" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                                    <i class="far fa-pizza text-yellow-600 text-2xl"></i>
+                                <a href="/pizzas" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-100">
+                                    <i class="text-2xl text-yellow-500 far fa-pizza"></i>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
                                             Pizzas
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            Une large gamme de pizzas, pour tout les gôuts et toutes les tailles
+                                            Une large gamme de pizzas, pour tout les gôuts
                                         </p>
                                     </div>
                                 </a>
 
-                                <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                                    <i class="far fa-salad text-yellow-600 text-2xl"></i>
+                                <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-100">
+                                    <i class="text-2xl text-yellow-500 far fa-salad"></i>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
                                             Entrées & Salades
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            Desc
+                                            Des végétables pour les tortues, les végans et les viandophobes
                                         </p>
                                     </div>
                                 </a>
 
-                                <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                                <i class="far fa-ice-cream text-yellow-600 text-2xl"></i>
+                                <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-100">
+                                <i class="text-2xl text-yellow-500 far fa-ice-cream"></i>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
                                             Desserts & Glaces
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            Desc
+                                            Découvrez la fraîcheur de nos glaces faites maisons
                                         </p>
                                     </div>
                                 </a>
 
-                                <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                                    <i class="far fa-cocktail text-yellow-600 text-2xl"></i>
+                                <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-100">
+                                    <i class="text-2xl text-yellow-500 far fa-cocktail"></i>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
                                             Boissons
                                         </p>
                                         <p class="mt-1 text-sm text-gray-500">
-                                            Desc
+                                            De la bonne limonade ou un soda pour vous hydrater
                                         </p>
                                     </div>
                                 </a>
                             </div>
                             <div class="px-5 py-5 space-y-6 bg-blue-500 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                                 <div class="flow-root">
-                                    <a class="flex items-center p-3 -m-3 text-base font-medium text-white rounded-md hover:bg-blue-100">
-                                        <i class="fad fa-ticket text-white text-2xl"></i>
-                                        <span class="ml-3 uppercase text-bold">5% de réduction avec le code PIDZAW10</span>
+                                    <a class="flex items-center p-3 -m-3 text-base font-medium text-white rounded-md hover:bg-blue-600">
+                                        <i class="text-2xl text-white fad fa-ticket"></i>
+                                        <span class="ml-3 font-bold uppercase">5% de réduction avec le code PIDZAW5</span>
                                     </a>
                                 </div>
                             </div>
