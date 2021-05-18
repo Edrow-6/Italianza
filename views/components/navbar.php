@@ -45,7 +45,7 @@
                                 </a>
 
                                 <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-100">
-                                <i class="text-2xl text-yellow-500 far fa-ice-cream"></i>
+                                    <i class="text-2xl text-yellow-500 far fa-ice-cream"></i>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
                                             Desserts & Glaces

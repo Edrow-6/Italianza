@@ -27,7 +27,7 @@
             <div class="relative pb-48 overflow-hidden rounded-lg">
                 <img class="absolute inset-0 object-cover w-full h-full" src="' . $image . '" alt="">
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="/pizzas">
                 <div class="p-4">
                     <h2 class="mt-2 mb-2 font-bold uppercase">' . $nom . '</h2>
                     <p class="h-10 text-sm">';

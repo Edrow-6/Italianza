@@ -27,7 +27,7 @@ $router->post('/pizzas', function () {
         $id = (int)$_POST['id'];
         $taille = (string)$_POST['taille'];
         $quantite = (int)$_POST['quantite'];
-
+        header("Refresh:0");
         //Préparation de l'instruction SQL, nous vérifions essentiellement si le produit existe dans notre base de données.
         $conn = connectDB();
         $stmt = $conn->prepare('SELECT * FROM produit_pizza WHERE id = ?');
@@ -51,17 +51,8 @@ $router->post('/pizzas', function () {
             }
         }
         // Redirection vers la page source.
-        include dirname(__DIR__) . '/views/pizzas.php';
+        header("Refresh:0");
     }
-    /*ANCIEN -> if (isset($_SESSION['panier'])) {
-        $panier = $_SESSION['panier'];
-    } else {
-        $_SESSION['panier'] = null;
-    }
-    $panier["id_pizza"] = $_POST['ajouter'];
-    $panier["taille"] = $_POST['taille'];
-    $_SESSION['panier'] = $panier;
-    header("Refresh:0");*/
 });
 $router->get('/nos-engagements', function () {
     include dirname(__DIR__) . '/views/engagements.php';
