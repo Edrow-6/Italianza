@@ -70,7 +70,7 @@ function getPizza($nom)
 	}
 }
 
-function getAllIngredient($id)
+function getAllIngredient()
 {
 	$link = connectDB();
 	if (!$link) {
@@ -79,7 +79,7 @@ function getAllIngredient($id)
 
 		$req = "select * from ingredient_pizza";
 		$sth = $link->prepare($req);
-		$sth->execute([$id]);
+		$sth->execute([]);
 		if (!$sth) {
 			echo $link->errorInfo();
 			return null;
@@ -124,16 +124,16 @@ function getIngredientById($id)
 	}
 }
 
-function getPizzaIngredientByID($idpizza)
+function getPizzaIngredientByID($nompizza)
 {
 	$link = connectDB();
 	if (!$link) {
 		echo 'a problem was occured !! try again later';
 	} else {
 
-		$req = "select id_ingredient from produit_ingredient where  id_produit=?";
+		$req = "SELECT ingredient_pizza.libelle FROM produit_pizza INNER JOIN produit_ingredient ON produit_pizza.id = produit_ingredient.id_produit INNER JOIN ingredient_pizza ON ingredient_pizza.id = produit_ingredient.id_ingredient WHERE produit_pizza.libelle = ?";
 		$sth = $link->prepare($req);
-		$sth->execute([$idpizza]);
+		$sth->execute([$nompizza]);
 		if (!$sth) {
 			echo $link->errorInfo();
 			return null;
@@ -143,13 +143,7 @@ function getPizzaIngredientByID($idpizza)
 			if ($nblignes > 0) {
 				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
 				disconnectDB($link);
-				foreach ($tab as $key => $valeur) {
-					$ing = getIngredientById($valeur["id_ingredient"]);
-					foreach ($ing as $cle => $valeurs) {
-						$pizza[] = $valeurs["libelle"];
-					}
-				}
-				return $pizza;
+				return $tab;
 			} else {
 				return null;
 			}

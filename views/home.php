@@ -1,22 +1,15 @@
-<?php
-// Inclusion du backend pour les fonctions
-require_once dirname(__DIR__) . '/backend/functions.php';
-?>
+<?php require_once dirname(__DIR__) . '/backend/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <?php
-    // Ajout du contenu du head
-    include dirname(__FILE__) . '/components/head.php';
-    ?>
+    <!-- CONTENU HEAD -->
+    <?php include dirname(__FILE__) . '/components/head.php'; ?>
 </head>
 
 <body>
-    <?php
-    // Ajout de la barre de navigation
-    include dirname(__FILE__) . '/components/navbar.php';
-    ?>
+    <!-- BARRE DE NAVIGATION -->
+    <?php include dirname(__FILE__) . '/components/navbar.php'; ?>
     <header>
         <div class="w-full bg-center bg-cover" style="height:32rem; background-image: url(https://c0.wallpaperflare.com/preview/378/110/547/pizza-oven-fire-red.jpg);">
             <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
@@ -70,10 +63,8 @@ require_once dirname(__DIR__) . '/backend/functions.php';
             </div>
         </div>
     </div>
-    <?php
-    // Ajout du bas de page
-    include dirname(__FILE__) . '/components/footer.php';
-    ?>
+    <!-- BAS DE PAGE -->
+    <?php include dirname(__FILE__) . '/components/footer.php'; ?>
 </body>
 
 </html>

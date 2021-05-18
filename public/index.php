@@ -16,6 +16,9 @@ $router->get('/inscription', function () {
 $router->get('/italianza-fidelite', function () {
     include dirname(__DIR__) . '/views/fidelite.php';
 });
+$router->get('/pizzas', function () {
+    include dirname(__DIR__) . '/views/pizzas.php';
+});
 $router->get('/nos-engagements', function () {
     include dirname(__DIR__) . '/views/engagements.php';
 });
