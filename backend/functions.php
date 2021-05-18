@@ -2,14 +2,13 @@
 session_start();
 function connectDB()
 {
-	$link = new PDO('mysql:host=dawbee.fr;dbname=Italianza', 'ppe', 'ppeLycée91@');
-	if (!$link) {
-
-		return  null;
-	} else {
-
-		return $link;
+	try {
+		$conn = new PDO('mysql:host=dawbee.fr;dbname=Italianza', 'ppe', 'ppeLycée91@');
+	} catch (PDOException $e) {
+		echo "Erreur : " . $e->getMessage() . "<br/>";
+		die();
 	}
+	return $conn;
 }
 function disconnectDB($link)
 {
@@ -18,23 +17,23 @@ function disconnectDB($link)
 
 function getAllPizza()
 {
-	$link = connectDB();
-	if (!$link) {
+	$conn = connectDB();
+	if (!$conn) {
 		echo 'a problem was occured !! try again later';
 	} else {
 
 		$req = "select * from produit_pizza where taille='mega' ";
-		$sth = $link->prepare($req);
+		$sth = $conn->prepare($req);
 		$sth->execute();
 		if (!$sth) {
-			echo $link->errorInfo();
+			echo $conn->errorInfo();
 			return null;
 		} else {
 			$nblignes = $sth->rowCount();
 
 			if ($nblignes > 0) {
 				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
-				disconnectDB($link);
+				disconnectDB($conn);
 				return $tab;
 			} else {
 				return null;
@@ -45,23 +44,23 @@ function getAllPizza()
 
 function getPizza($nom)
 {
-	$link = connectDB();
-	if (!$link) {
+	$conn = connectDB();
+	if (!$conn) {
 		echo 'a problem was occured !! try again later';
 	} else {
 
 		$req = "select * from produit_pizza where libelle=?";
-		$sth = $link->prepare($req);
+		$sth = $conn->prepare($req);
 		$sth->execute([$nom]);
 		if (!$sth) {
-			echo $link->errorInfo();
+			echo $conn->errorInfo();
 			return null;
 		} else {
 			$nblignes = $sth->rowCount();
 
 			if ($nblignes > 0) {
 				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
-				disconnectDB($link);
+				disconnectDB($conn);
 				return $tab;
 			} else {
 				return null;
@@ -72,23 +71,23 @@ function getPizza($nom)
 
 function getAllIngredient()
 {
-	$link = connectDB();
-	if (!$link) {
+	$conn = connectDB();
+	if (!$conn) {
 		echo 'a problem was occured !! try again later';
 	} else {
 
 		$req = "select * from ingredient_pizza";
-		$sth = $link->prepare($req);
+		$sth = $conn->prepare($req);
 		$sth->execute([]);
 		if (!$sth) {
-			echo $link->errorInfo();
+			echo $conn->errorInfo();
 			return null;
 		} else {
 			$nblignes = $sth->rowCount();
 
 			if ($nblignes > 0) {
 				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
-				disconnectDB($link);
+				disconnectDB($conn);
 				return $tab;
 			} else {
 				return null;
@@ -99,23 +98,23 @@ function getAllIngredient()
 
 function getIngredientById($id)
 {
-	$link = connectDB();
-	if (!$link) {
+	$conn = connectDB();
+	if (!$conn) {
 		echo 'a problem was occured !! try again later';
 	} else {
 
 		$req = "select * from ingredient_pizza where id =?";
-		$sth = $link->prepare($req);
+		$sth = $conn->prepare($req);
 		$sth->execute([$id]);
 		if (!$sth) {
-			echo $link->errorInfo();
+			echo $conn->errorInfo();
 			return null;
 		} else {
 			$nblignes = $sth->rowCount();
 
 			if ($nblignes > 0) {
 				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
-				disconnectDB($link);
+				disconnectDB($conn);
 				return $tab;
 			} else {
 				return null;
@@ -126,23 +125,23 @@ function getIngredientById($id)
 
 function getPizzaIngredientByID($nompizza)
 {
-	$link = connectDB();
-	if (!$link) {
+	$conn = connectDB();
+	if (!$conn) {
 		echo 'a problem was occured !! try again later';
 	} else {
 
 		$req = "SELECT ingredient_pizza.libelle FROM produit_pizza INNER JOIN produit_ingredient ON produit_pizza.id = produit_ingredient.id_produit INNER JOIN ingredient_pizza ON ingredient_pizza.id = produit_ingredient.id_ingredient WHERE produit_pizza.libelle = ?";
-		$sth = $link->prepare($req);
+		$sth = $conn->prepare($req);
 		$sth->execute([$nompizza]);
 		if (!$sth) {
-			echo $link->errorInfo();
+			echo $conn->errorInfo();
 			return null;
 		} else {
 			$nblignes = $sth->rowCount();
 
 			if ($nblignes > 0) {
 				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
-				disconnectDB($link);
+				disconnectDB($conn);
 				return $tab;
 			} else {
 				return null;
