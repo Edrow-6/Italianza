@@ -15,7 +15,7 @@
         <div class="grid grid-cols-3 gap-4 mx-10 gap-x-12 justify-items-center ">
 
             <?php
-            $Pizza = getAllPizza();
+            $Pizza = getAllBoissons();
             foreach ($Pizza as $key => $valeur) {
                 $nom = $valeur['nom'];
                 $id = $valeur['id'];

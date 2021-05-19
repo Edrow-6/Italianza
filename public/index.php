@@ -1,6 +1,6 @@
 <?php
 require dirname(__DIR__) . '/vendor/autoload.php';
-require_once dirname(__DIR__) . '/backend/functions.php';
+require_once dirname(__DIR__) . '/Backend/functions.php';
 
 use App\Router\Router;
 
@@ -27,10 +27,9 @@ $router->post('/pizzas', function () {
         $id = (int)$_POST['id'];
         $taille = (string)$_POST['taille'];
         $quantite = (int)$_POST['quantite'];
-        header("Refresh:0");
         //Préparation de l'instruction SQL, nous vérifions essentiellement si le produit existe dans notre base de données.
         $conn = connectDB();
-        $stmt = $conn->prepare('SELECT * FROM produit_pizza WHERE id = ?');
+        $stmt = $conn->prepare('SELECT * FROM pizzas WHERE id = ?');
         $stmt->execute([$_POST['id']]);
         // Récupère le produit depuis la base de données et renvoie le résultat sous forme de tableau.
         $produit_pizza = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -54,13 +53,16 @@ $router->post('/pizzas', function () {
         header("Refresh:0");
     }
 });
+$router->get('/desserts', function () {
+    include dirname(__DIR__) . '/views/desserts.php';
+});
+$router->get('/boissons', function () {
+    include dirname(__DIR__) . '/views/boissons.php';
+});
 $router->get('/nos-engagements', function () {
     include dirname(__DIR__) . '/views/engagements.php';
 });
-/*$router->get('/posts/:id', function ($id) {
-    echo "Voila l'article $id";
-});*/
 
 $router->run();
 
-//include dirname(__DIR__) . '/views/home.php';
+// include dirname(__DIR__) . '/views/home.php';
