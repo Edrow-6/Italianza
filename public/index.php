@@ -1,6 +1,6 @@
 <?php
 require dirname(__DIR__) . '/vendor/autoload.php';
-require_once dirname(__DIR__) . '/backend/functions.php';
+require_once dirname(__DIR__) . '/Backend/functions.php';
 
 use App\Router\Router;
 
@@ -62,10 +62,7 @@ $router->get('/boissons', function () {
 $router->get('/nos-engagements', function () {
     include dirname(__DIR__) . '/views/engagements.php';
 });
-/*$router->get('/posts/:id', function ($id) {
-    echo "Voila l'article $id";
-});*/
 
 $router->run();
 
-//include dirname(__DIR__) . '/views/home.php';
+// include dirname(__DIR__) . '/views/home.php';

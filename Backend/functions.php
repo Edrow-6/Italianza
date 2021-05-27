@@ -3,7 +3,11 @@ session_start();
 function connectDB()
 {
 	try {
+<<<<<<< HEAD:backend/functions.php
 		$conn = new PDO('mysql:host=hostname;dbname=databasename', 'username', 'password');
+=======
+		$conn = new PDO('mysql:host=localhost;dbname=Italianza', 'ppe', 'ppeLycée91@');
+>>>>>>> 84b4a797aeb06158b97a23dca37e4a6a98e65660:Backend/functions.php
 	} catch (PDOException $e) {
 		echo "Erreur : " . $e->getMessage() . "<br/>";
 		die();
