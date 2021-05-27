@@ -27,10 +27,9 @@ $router->post('/pizzas', function () {
         $id = (int)$_POST['id'];
         $taille = (string)$_POST['taille'];
         $quantite = (int)$_POST['quantite'];
-        header("Refresh:0");
         //Préparation de l'instruction SQL, nous vérifions essentiellement si le produit existe dans notre base de données.
         $conn = connectDB();
-        $stmt = $conn->prepare('SELECT * FROM produit_pizza WHERE id = ?');
+        $stmt = $conn->prepare('SELECT * FROM pizzas WHERE id = ?');
         $stmt->execute([$_POST['id']]);
         // Récupère le produit depuis la base de données et renvoie le résultat sous forme de tableau.
         $produit_pizza = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -53,6 +52,12 @@ $router->post('/pizzas', function () {
         // Redirection vers la page source.
         header("Refresh:0");
     }
+});
+$router->get('/desserts', function () {
+    include dirname(__DIR__) . '/views/desserts.php';
+});
+$router->get('/boissons', function () {
+    include dirname(__DIR__) . '/views/boissons.php';
 });
 $router->get('/nos-engagements', function () {
     include dirname(__DIR__) . '/views/engagements.php';

@@ -3,7 +3,7 @@ session_start();
 function connectDB()
 {
 	try {
-		$conn = new PDO('mysql:host=dawbee.fr;dbname=Italianza', 'ppe', 'ppeLycée91@');
+		$conn = new PDO('mysql:host=hostname;dbname=databasename', 'username', 'password');
 	} catch (PDOException $e) {
 		echo "Erreur : " . $e->getMessage() . "<br/>";
 		die();
@@ -22,7 +22,61 @@ function getAllPizza()
 		echo 'a problem was occured !! try again later';
 	} else {
 
-		$req = "select * from produit_pizza where taille='mega' ";
+		$req = "select * from pizzas";
+		$sth = $conn->prepare($req);
+		$sth->execute();
+		if (!$sth) {
+			echo $conn->errorInfo();
+			return null;
+		} else {
+			$nblignes = $sth->rowCount();
+
+			if ($nblignes > 0) {
+				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
+				disconnectDB($conn);
+				return $tab;
+			} else {
+				return null;
+			}
+		}
+	}
+}
+
+function getAllDesserts()
+{
+	$conn = connectDB();
+	if (!$conn) {
+		echo 'a problem was occured !! try again later';
+	} else {
+
+		$req = "select * from desserts";
+		$sth = $conn->prepare($req);
+		$sth->execute();
+		if (!$sth) {
+			echo $conn->errorInfo();
+			return null;
+		} else {
+			$nblignes = $sth->rowCount();
+
+			if ($nblignes > 0) {
+				$tab = $sth->fetchAll(PDO::FETCH_ASSOC);
+				disconnectDB($conn);
+				return $tab;
+			} else {
+				return null;
+			}
+		}
+	}
+}
+
+function getAllBoissons()
+{
+	$conn = connectDB();
+	if (!$conn) {
+		echo 'a problem was occured !! try again later';
+	} else {
+
+		$req = "select * from boissons";
 		$sth = $conn->prepare($req);
 		$sth->execute();
 		if (!$sth) {
@@ -49,7 +103,7 @@ function getPizza($nom)
 		echo 'a problem was occured !! try again later';
 	} else {
 
-		$req = "select * from produit_pizza where libelle=?";
+		$req = "select * from pizzas where nom=?";
 		$sth = $conn->prepare($req);
 		$sth->execute([$nom]);
 		if (!$sth) {
@@ -130,7 +184,7 @@ function getPizzaIngredientByID($nompizza)
 		echo 'a problem was occured !! try again later';
 	} else {
 
-		$req = "SELECT ingredient_pizza.libelle FROM produit_pizza INNER JOIN produit_ingredient ON produit_pizza.id = produit_ingredient.id_produit INNER JOIN ingredient_pizza ON ingredient_pizza.id = produit_ingredient.id_ingredient WHERE produit_pizza.libelle = ?";
+		$req = "SELECT ingredient_pizza.libelle FROM pizzas INNER JOIN produit_ingredient ON pizzas.id = produit_ingredient.id_produit INNER JOIN ingredient_pizza ON ingredient_pizza.id = produit_ingredient.id_ingredient WHERE pizzas.nom = ?";
 		$sth = $conn->prepare($req);
 		$sth->execute([$nompizza]);
 		if (!$sth) {
